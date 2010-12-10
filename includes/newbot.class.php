@@ -1,37 +1,33 @@
 <?php
 /*
---------------------------------------------- Informacion ---------------------------------------------
   _    _                                      _                   _                 
  | |  | |                                    | |                 | |                
- | |  | |   __ _    __ _   _ __ ___     ___  | |   __ _   _ __   | |   __ _   _   _  ©
+ | |  | |   __ _    __ _   _ __ ___     ___  | |   __ _   _ __   | |   __ _   _   _ 
  | |  | |  / _` |  / _` | | '_ ` _ \   / _ \ | |  / _` | | '_ \  | |  / _` | | | | |
  | |__| | | (_| | | (_| | | | | | | | |  __/ | | | (_| | | |_) | | | | (_| | | |_| |
   \____/   \__, |  \__,_| |_| |_| |_|  \___| |_|  \__,_| | .__/  |_|  \__,_|  \__, |
             __/ |                                        | |                   __/ |
            |___/                                         |_|                  |___/ 
+
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
  
+
  *
- * newbot.class.php
- *
- * @copyright 2008-2010 Ugamelaplay
- * @package Ugamelaplay
  * @author shoghicp@gmail.com
  *
- *	UGamelaPlay.net es propietario de la parte propia de este archivo. Partes de este archivo son parte de XG Proyect. Su uso esta restringido a UGaSpace y XG Proyect por el momento. Para cualquier otra plataforma, contacte con shoghicp@gmail.com
- *	UGamelaPlay.net se reserva todos los derechos sobre la parte propia de este archivo.
- *
- 
---------------------------------------------- Descripcion ------------------------------------------------------
-
-Este archivo controla los bots. Amplia edificios, almacenes, investigaciones, crea flota y defensa, envia flotas, coloniza y hace fleet-saving.
-
---------------------------------------------- Historial de cambios ---------------------------------------------
-
-0.1 - Crea y sube edificios
-0.2 - Añadidas flotas, defensas en investigaciones
-0.3 - Coloniza, mueve flota, hace fleetsaving, formulas de control
-0.4 - Fixes varios y logs en archivo
-0.5 - Base de datos
 
 */
 

@@ -41,19 +41,17 @@ switch($_GET[page])
 		$metal      = $_POST['metal'];
 		$cristal    = $_POST['cristal'];
 		$deut       = $_POST['deut'];
-		$trit       = $_POST['trit'];
 		$dark		= $_POST['dark'];
 
 		if ($_POST){
-		if(is_numeric($id) && is_numeric($metal) && is_numeric($cristal) && is_numeric($deut) && is_numeric($trit) && is_numeric($dark) && is_numeric($id_dark))
+		if(is_numeric($id) && is_numeric($metal) && is_numeric($cristal) && is_numeric($deut) && is_numeric($dark) && is_numeric($id_dark))
 		{
 			if ($_POST['add'])
 			{
 				$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 				$QryUpdatePlanet .= "`metal` = `metal` + '". $metal ."', ";
 				$QryUpdatePlanet .= "`crystal` = `crystal` + '". $cristal ."', ";
-				$QryUpdatePlanet .= "`deuterium` = `deuterium` + '". $deut ."', ";
-				$QryUpdatePlanet .= "`tritium` = `tritium` + '". $trit ."' ";
+				$QryUpdatePlanet .= "`deuterium` = `deuterium` + '". $deut ."' ";
 				$QryUpdatePlanet .= "WHERE ";
 				$QryUpdatePlanet .= "`id` = '". $id ."' ";
 				doquery( $QryUpdatePlanet, "planets");
@@ -75,8 +73,7 @@ switch($_GET[page])
 				$QryUpdatePlanet  = "UPDATE {{table}} SET ";
 				$QryUpdatePlanet .= "`metal` = `metal` - '". $metal ."', ";
 				$QryUpdatePlanet .= "`crystal` = `crystal` - '". $cristal ."', ";
-				$QryUpdatePlanet .= "`deuterium` = `deuterium` - '". $deut ."', ";
-				$QryUpdatePlanet .= "`tritium` = `tritium` + '". $trit ."' ";
+				$QryUpdatePlanet .= "`deuterium` = `deuterium` - '". $deut ."' ";
 				$QryUpdatePlanet .= "WHERE ";
 				$QryUpdatePlanet .= "`id` = '". $id ."' ";
 				doquery( $QryUpdatePlanet, "planets");
@@ -100,7 +97,6 @@ switch($_GET[page])
 				$Log	.=	$lang['metal'].": ".$metal."\n";
 				$Log	.=	$lang['crystal'].": ".$cristal."\n";
 				$Log	.=	$lang['deuterium'].": ".$deut."\n";
-				$Log	.=	$lang['tritium'].": ".$trit."\n";
 				$Log	.=	$lang['log_to_planet'].$id."\n";
 				$Log	.=	$lang['log_and'].$lang['darkmatter'].": ".$dark."\n";
 				$Log	.=	$lang['log_to_user'].$id_dark."\n";
@@ -386,7 +382,10 @@ switch($_GET[page])
 							if ($mondbasis > 0)
 							{
 								$Sum	=	$mondbasis * FIELDS_BY_MOONBASIS_LEVEL;
+								//doquery("UPDATE {{table}} SET `field_max` = field_max + '".$Sum."', `field_current` = field_current + '".$mondbasis."'", "planets");
+								// FIX START BY alivan
 								doquery("UPDATE {{table}} SET `field_max` = field_max '".$Sum."', `field_current` = field_current '".$mondbasis."' WHERE `id` = '". $id ."'", "planets");
+								// FIX END BY alivan
 							}
 						}
 						else
@@ -436,7 +435,11 @@ switch($_GET[page])
 							if ($mondbasis > 0)
 							{
 								$Sum	=	$mondbasis * FIELDS_BY_MOONBASIS_LEVEL;
-								doquery("UPDATE {{table}} SET `field_max` = field_max - '".$Sum."', `field_current` = field_current - '".$mondbasis."' WHERE `id` = '". $id ."'", "planets");							}
+								//doquery("UPDATE {{table}} SET `field_max` = field_max - '".$Sum."', `field_current` = field_current - '".$mondbasis."'", "planets");
+								// FIX START BY alivan
+								doquery("UPDATE {{table}} SET `field_max` = field_max - '".$Sum."', `field_current` = field_current - '".$mondbasis."' WHERE `id` = '". $id ."'", "planets");
+								// FIX END BY alivan
+							}
 						}
 						else
 						{

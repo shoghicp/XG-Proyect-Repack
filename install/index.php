@@ -454,7 +454,7 @@ $Qry44 = "CREATE TABLE IF NOT EXISTS `$_POST[prefix]topkb` (
 					case'2.9.4':
 						$QrysArray	= array($Qry38,$Qry41,$Qry42, $Qry40, $Qry39,$Qry45, $Qry46, $Qry47,$Qry43,$Qry44, $Qry35, $Qry36, $Qry37, $Qry18, $Qry19, $Qry33);
 					break;
-					case( ( $_POST[modo] == '2.9.5' ) or ( $_POST[modo] == '2.9.6' ) ):
+					case( ( $_POST[modo] == '2.9.5' ) or ( $_POST[modo] == '2.9.6' ) or ( $_POST[modo] == '2.9.7' ) ):
 						$QrysArray	= array($Qry45, $Qry46, $Qry47,$Qry43,$Qry44, $Qry40, $Qry35, $Qry36, $Qry37, $Qry38,$Qry41,$Qry42, $Qry39, $Qry18, $Qry19);
 					break;
 					case'2.9.6rp':

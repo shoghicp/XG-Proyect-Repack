@@ -7,12 +7,12 @@ $lang['changelog']   = array(
 - [Fix] Error al intentar construir algunos edificios inexistentes (alivan)
 - [Fix] Los misiles interplanetarios funcionan como de intercepcion (shoghicp)
 - [Fix] No se muestra el planeta de origen en los mensajes de misiles (tomtom)
-- [Fix] Envio de misiles sin deuterio (alivan)
+- [Fix] Error envío de misiles sin deuterio y error en &mode=3 en tu propio sistema (alivan)
 - [Fix] Campos base lunar por admin no eran correctos (alivan)
 - [Fix] Las querys en la instalacion no se realizaban (shoghicp)
 - [Fix] El tiempo de vuelta de flotas en estacionar o expedicion no era el correcto (shoghicp)
+- [Fix] Fallo de seguridad en envio de flotas en galaxia (lucky)
 - [Mod] Mas informacion en actualizador de version (shoghicp)
-
 ',
 
 'XGrp3' => '

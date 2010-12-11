@@ -102,10 +102,10 @@ $CurrentFlyingFleets = $CurrentFlyingFleets["Nbre"];
 
 $QrySelectEnemy  = "SELECT * FROM {{table}} ";
 $QrySelectEnemy .= "WHERE ";
-$QrySelectEnemy .= "`galaxy` = '". $_POST['galaxy'] ."' AND ";
-$QrySelectEnemy .= "`system` = '". $_POST['system'] ."' AND ";
-$QrySelectEnemy .= "`planet` = '". $_POST['planet'] ."' AND ";
-$QrySelectEnemy .= "`planet_type` = '". $_POST['planettype'] ."';";
+$QrySelectEnemy .= "`galaxy` = '". intval($_POST['galaxy']) ."' AND ";
+$QrySelectEnemy .= "`system` = '". intval($_POST['system']) ."' AND ";
+$QrySelectEnemy .= "`planet` = '". intval($_POST['planet']) ."' AND ";
+$QrySelectEnemy .= "`planet_type` = '". intval($_POST['planettype']) ."';";
 $TargetRow = doquery( $QrySelectEnemy, 'planets', true);
 
 if ($TargetRow['id_owner'] == '')

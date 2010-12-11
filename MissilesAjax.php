@@ -73,15 +73,14 @@ elseif ($iraks==0)
 	$error = $lang['ma_no_missiles'];
 elseif ($anz==0)
 	$error = $lang['ma_add_missile_number'];
-elseif (($MyGameLevel > ($HeGameLevel * $protectionmulti)) && $protection == 1 && ($HeGameLevel < ($protectiontime * 1000)))
-	$error = $lang['fl_week_player'];
-elseif ((($MyGameLevel * $protectionmulti) < $HeGameLevel) && $protection == 1 && ($MyGameLevel < ($protectiontime * 1000)))
-	$error = $lang['fl_strong_player'];
+elseif ($tempvar4['onlinetime'] >= (time()-60 * 60 * 24 * 7)){
+	if(($MyGameLevel > ($HeGameLevel * $protectionmulti)) && $protection == 1 && ($HeGameLevel < ($protectiontime * 1000)))
+		$error = $lang['fl_week_player'];
+	elseif ((($MyGameLevel * $protectionmulti) < $HeGameLevel) && $protection == 1 && ($MyGameLevel < ($protectiontime * 1000)))
+		$error = $lang['fl_strong_player'];
+}
 elseif ($tempvar4['urlaubs_modus']==1)
 	$error = $lang['fl_in_vacation_player'];
-
-if ($error != "")
-	exit ( message ( $error, "game.php?page=galaxy&mode=2&galaxy=".$g."&system=".$s."&planet=".$i."&current=".$user['current_planet']."", 2 ) );
 
 $ziel_id = $tempvar3["id_owner"];
 

@@ -12,6 +12,7 @@ $lang['changelog']   = array(
 - [Fix] Las querys en la instalacion no se realizaban (shoghicp)
 - [Fix] El tiempo de vuelta de flotas en estacionar o expedicion no era el correcto (shoghicp)
 - [Fix] Fallo de seguridad en envio de flotas en galaxia (lucky)
+- [Fix] Error de formula al colonizar (h2swider)
 - [Mod] Mas informacion en actualizador de version (shoghicp)
 ',
 
@@ -775,6 +776,7 @@ la batalla no le figuraba.
 '1.5a' => ' 26/03/09
 
 - Corregido el link de administración.-
+
 - Mejoras en el instalador.-
 - Fix corregido bug que mostraba mal la leyenda en la galaxia.-
 - Actualizado el auto-update para poder pasar fácilmente de la versión 1.4f o de la 1.4c a la 1.5a.-

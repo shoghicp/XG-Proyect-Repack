@@ -26,20 +26,33 @@ if(!defined('INSIDE')){ die(header("location:../../"));}
 		global $game_config, $user;
 
 		if (!$HomeWorld)
-		{
-			$ClassicBase      = 163;
-			$SettingSize      = $game_config['initial_fields'];
-			$PlanetRatio      = floor ( ($ClassicBase / $SettingSize) * 10000 ) / 100;
-			$RandomMin        = array (  140,  150,  155, 200, 195, 180, 215, 220, 225, 175, 180, 185, 160, 140, 150);
-			$RandomMax        = array (  290,  295,  295, 440, 440, 430, 380, 380, 390, 325, 320, 330, 360, 500, 350);
-			$CalculMin        = floor ( $RandomMin[$Position - 1] + ( $RandomMin[$Position - 1] * $PlanetRatio ) / 100 );
-			$CalculMax        = floor ( $RandomMax[$Position - 1] + ( $RandomMax[$Position - 1] * $PlanetRatio ) / 100 );
-			$RandomSize       = mt_rand($CalculMin, $CalculMax);
-			$MaxAddon         = mt_rand(0, 110);
-			$MinAddon         = mt_rand(0, 100);
-			$Addon            = ($MaxAddon - $MinAddon);
-			$PlanetFields     = ($RandomSize + $Addon);
-		}
+        {
+            $ClassicBase      = 163;
+            $SettingSize      = $game_config['initial_fields'];
+            /*$PlanetRatio      = floor ( ($ClassicBase / $SettingSize) * 10000 ) / 100;
+            $RandomMin        = array (  140,  150,  155, 200, 195, 180, 215, 220, 225, 175, 180, 185, 160, 140, 150);
+            $RandomMax        = array (  290,  295,  295, 440, 440, 430, 380, 380, 390, 325, 320, 330, 360, 500, 350);
+            $CalculMin        = floor ( $RandomMin[$Position - 1] + ( $RandomMin[$Position - 1] * $PlanetRatio ) / 100 );
+            $CalculMax        = floor ( $RandomMax[$Position - 1] + ( $RandomMax[$Position - 1] * $PlanetRatio ) / 100 );
+
+            $RandomSize       = mt_rand($CalculMin, $CalculMax);
+            $MaxAddon         = mt_rand(0, 110);
+            $MinAddon         = mt_rand(0, 100);
+
+            $Addon            = ($MaxAddon - $MinAddon);
+            $PlanetFields     = ($RandomSize + $Addon);*/
+
+                        //minifix h2swider 11/12/2010
+                        $factor = mt_rand(0,2);
+                        $multiplier[0]=0.70;
+                        $multiplier[1]=1;
+                        $multiplier[2]=1.30;
+
+                        $RandomMin        = array (  38,  35,  43, 124, 122, 128, 105, 104, 102, 73 , 77 , 74 , 58 , 63 , 62);
+                        $RandomMax        = array (  73,  69,  67, 300, 307, 315, 195, 193, 200, 122, 127, 125 , 187, 192, 191);
+                        
+                        $PlanetFields     = floor(mt_rand($RandomMin[$Position-1], $RandomMax[$Position-1])*$multiplier[$factor]);
+        }  
 		else
 		{
 			$PlanetFields     = $game_config['initial_fields'];

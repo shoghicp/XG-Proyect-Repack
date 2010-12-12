@@ -48,7 +48,12 @@ if ( !defined('INSIDE') ) die(header("location:../"));
 	
 	// ADVERTISEMENTS
 	define('ADVERTISEMENT'       	  , '');
+
+	// GIT
+	define('GET_UPDATE'				  , true);
+	define('GET_REPO'				  , 'https://github.com/shoghicp/XG-Proyect-Repack/raw/master/last.zip');
 	
+
 	//CHECK IF THE SERVER HAS SQLITE, MINIDATABASES
 	if(class_exists('SQLiteDatabase') or class_exists('SQLite3')){
 		define('HAS_SQLITE'			  	  , true);

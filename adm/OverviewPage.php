@@ -34,7 +34,7 @@ function check_updates()
 	global $game_config;
 	if (function_exists('file_get_contents'))
 	{
-		$current = explode(";", trim(@file_get_contents('http://www.ugamelaplay.net/xg/rp/last.txt')));
+		$current = explode(";", trim(getRemoteFile('http://www.ugamelaplay.net/xg/rp/last.txt')));
 
 		if (version_compare ( $current[0] , VERSION , ">" ))
 		{
@@ -98,6 +98,8 @@ if ($user['authlevel'] >= 3)
 		$Message	.= " <br> Haz click <a href='http://www.ugamelaplay.net/xg/rp/last.zip' style='font-size:14px;'><b><u>aqui</u></b></a> para descargarla</span><br/><br/>";
 		$error++;
 	}
+	if(GIT_UPDATE == true){$Message	.= "Haz click <a href='GitUpdate.php' style='font-size:14px;'><b><u>aqui</u></b></a> para actualizar automaticamente a los ultimos cambios<br/><br/>";}
+
 }
 
 if($error != 0)

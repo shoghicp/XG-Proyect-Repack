@@ -13,6 +13,8 @@ $lang['changelog']   = array(
 - [Fix] El tiempo de vuelta de flotas en estacionar o expedicion no era el correcto (shoghicp)
 - [Fix] Fallo de seguridad en envio de flotas en galaxia (lucky)
 - [Fix] Error de formula al colonizar (h2swider)
+- [Mod] Ya funciona el aviso de actualizacion en todos los servidores (shoghicp)
+- [Mod] Actualizar directamente a la version mas actual de github (shoghicp)
 - [Mod] Mas informacion en actualizador de version (shoghicp)
 ',
 
